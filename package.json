@@ -1,0 +1,66 @@
+{
+  "name": "@andideve/sx-core",
+  "version": "0.1.0",
+  "keywords": [
+    "react",
+    "css-in-js",
+    "emotion"
+  ],
+  "homepage": "https://github.com/andideve/sx-core",
+  "bugs": "https://github.com/andideve/sx-core/issues",
+  "license": "MIT",
+  "author": "Andi <andideve0@gmail.com>",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andideve/sx-core.git"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --no-cache",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "module": "dist/sx-core.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/sx-core.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/sx-core.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "peerDependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.1.0",
+    "csstype": "^3.1.1",
+    "husky": "^8.0.1",
+    "size-limit": "^8.1.0",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.4.0",
+    "typescript": "^4.8.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
